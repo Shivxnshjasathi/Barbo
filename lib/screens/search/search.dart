@@ -46,9 +46,10 @@ class _search_screenState extends State<search_screen> {
           ),
           consttextfield(TextField(
             controller: _search,
+            decoration: const InputDecoration(border: InputBorder.none),
           )),
           const SizedBox(
-            height: 20,
+            height: 10,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -56,6 +57,13 @@ class _search_screenState extends State<search_screen> {
               fontstyle("Location", 18, Colors.grey),
             ],
           ),
+          const SizedBox(
+            height: 10,
+          ),
+          consttextfield(TextField(
+            controller: _search,
+            decoration: const InputDecoration(border: InputBorder.none),
+          )),
           const SizedBox(
             height: 10,
           ),
