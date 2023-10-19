@@ -1,3 +1,4 @@
+import 'package:barbo/conts/nav_bar.dart';
 import 'package:barbo/conts/text.dart';
 import 'package:barbo/screens/dashboard/dashbordui.dart';
 import 'package:barbo/widgets/textfield.dart';
@@ -44,6 +45,9 @@ class _registerState extends State<register> {
           ),
           consttextfield(TextField(
             controller: _salonnamecontroller,
+            decoration: InputDecoration(
+              border: InputBorder.none,
+            ),
           )),
           const SizedBox(
             height: 20,
@@ -59,6 +63,9 @@ class _registerState extends State<register> {
           ),
           consttextfield(TextField(
             controller: _salonemailcontroller,
+            decoration: InputDecoration(
+              border: InputBorder.none,
+            ),
           )),
           const SizedBox(
             height: 50,
@@ -71,8 +78,7 @@ class _registerState extends State<register> {
                   Navigator.push(
                       context,
                       PageTransition(
-                          type: PageTransitionType.fade,
-                          child: const dashbordui()));
+                          type: PageTransitionType.fade, child: HomePage()));
                 },
                 child: Container(
                   height: 50,

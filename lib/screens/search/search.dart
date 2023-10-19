@@ -46,6 +46,9 @@ class _search_screenState extends State<search_screen> {
           ),
           consttextfield(TextField(
             controller: _search,
+            decoration: InputDecoration(
+              border: InputBorder.none,
+            ),
           )),
           const SizedBox(
             height: 20,
@@ -59,6 +62,12 @@ class _search_screenState extends State<search_screen> {
           const SizedBox(
             height: 10,
           ),
+          consttextfield(TextField(
+            controller: _search,
+            decoration: InputDecoration(
+              border: InputBorder.none,
+            ),
+          )),
           const SizedBox(
             height: 20,
           ),

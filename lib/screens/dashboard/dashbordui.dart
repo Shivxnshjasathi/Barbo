@@ -47,7 +47,7 @@ class _dashborduiState extends State<dashbordui> {
                 child: Row(
                   children: [
                     salontile(
-                        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUsLhqlAAnJhgQ1G78SlMIcWYsS5tRHbTRWjJr9XamPQ&s",
+                        "https://www.giellesse.it/wp-content/uploads/2019/05/01-Giellesse-Salone-2019-9648-3-1-1200x675.jpg",
                         "Decadence Hair & Beauty",
                         "5.0",
                         "36 store St,London"),
