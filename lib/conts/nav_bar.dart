@@ -19,12 +19,6 @@ class _HomePageState extends State<HomePage> {
     const profile(),
   ];
 
-  List<IconData> listOfIcons = [
-    Icons.home_mini_outlined,
-    Icons.search_rounded,
-    Icons.person,
-  ];
-
   int _bottomNavIndex = 0;
 
   void _onItemTapped(int index) {
@@ -36,26 +30,37 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: IndexedStack(
-        index: _bottomNavIndex,
-        children: pages,
-      ),
-      bottomNavigationBar: ClipRRect(
-        borderRadius: const BorderRadius.only(
-          topLeft: Radius.circular(20.0),
-          topRight: Radius.circular(20.0),
+        body: IndexedStack(
+          index: _bottomNavIndex,
+          children: pages,
         ),
-        child: AnimatedBottomNavigationBar(
-          backgroundColor: Colors.white,
-          height: 80,
-          iconSize: 30,
-          icons: listOfIcons,
-          activeIndex: _bottomNavIndex,
-          activeColor: const Color.fromRGBO(80, 67, 217, 1),
-          inactiveColor: Colors.black12,
-          onTap: (index) => setState(() => _bottomNavIndex = index),
-        ),
-      ),
-    );
+        bottomNavigationBar: ClipRRect(
+          borderRadius: const BorderRadius.only(
+            topLeft: Radius.circular(20.0),
+            topRight: Radius.circular(20.0),
+          ),
+          child: BottomNavigationBar(
+              items: const <BottomNavigationBarItem>[
+                BottomNavigationBarItem(
+                  icon: Icon(
+                    Icons.home_mini_outlined,
+                  ),
+                  label: "",
+                ),
+                BottomNavigationBarItem(
+                  label: "",
+                  icon: Icon(Icons.search),
+                ),
+                BottomNavigationBarItem(
+                  label: "",
+                  icon: Icon(Icons.person),
+                ),
+              ],
+              currentIndex: _bottomNavIndex,
+              selectedItemColor: const Color.fromRGBO(80, 67, 217, 1),
+              iconSize: 30,
+              onTap: _onItemTapped,
+              elevation: 5),
+        ));
   }
 }

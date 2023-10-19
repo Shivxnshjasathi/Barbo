@@ -1,5 +1,8 @@
+import 'package:barbo/screens/dasboard_owner/dashboard_owner.dart';
 import 'package:barbo/screens/dashboard/widgets_dashboard.dart';
+import 'package:barbo/screens/notificaion/notification.dart';
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 
 import '../../conts/text.dart';
 import '../../widgets/cat_tile.dart';
@@ -28,6 +31,32 @@ class _dashborduiState extends State<dashbordui> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   fontstyle("Hi, vaibhav", 26, Colors.black),
+                  Row(
+                    children: [
+                      InkWell(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                PageTransition(
+                                    type: PageTransitionType.fade,
+                                    child: const notification()));
+                          },
+                          child: const Icon(Icons.notifications)),
+                      SizedBox(
+                        width: 20,
+                      ),
+                      IconButton(
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              PageTransition(
+                                  type: PageTransitionType.fade,
+                                  child: const dashboard_owner()));
+                        },
+                        icon: const Icon(Icons.menu),
+                      )
+                    ],
+                  )
                 ],
               ),
               const SizedBox(

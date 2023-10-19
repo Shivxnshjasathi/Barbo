@@ -1,8 +1,6 @@
 import 'package:barbo/auth/auth_provider.dart';
 import 'package:barbo/splash/splash.dart';
 import 'package:provider/provider.dart';
-import 'package:barbo/screens/dashboard/dashbordui.dart';
-import 'package:barbo/screens/login/login_ui_user.dart';
 import 'package:flutter/material.dart';
 
 void main() {
