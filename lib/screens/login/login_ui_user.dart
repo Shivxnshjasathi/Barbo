@@ -51,9 +51,6 @@ class _login_ui_userState extends State<login_ui_user> {
             height: 10,
           ),
           consttextfield(TextField(
-            decoration: InputDecoration(
-              border: InputBorder.none,
-            ),
             controller: _emailcontroller,
           )),
           const SizedBox(
@@ -64,7 +61,7 @@ class _login_ui_userState extends State<login_ui_user> {
               Navigator.push(
                   context,
                   PageTransition(
-                      type: PageTransitionType.fade, child: HomePage()));
+                      type: PageTransitionType.fade, child: dashbordui()));
             },
             child: constbutton(
                 "Login", const Color.fromRGBO(80, 67, 217, 1), Colors.white),

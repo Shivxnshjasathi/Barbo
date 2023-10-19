@@ -46,7 +46,6 @@ class _HomePageState extends State<HomePage> {
           topRight: Radius.circular(20.0),
         ),
         child: AnimatedBottomNavigationBar(
-          elevation: 600,
           backgroundColor: Colors.white,
           height: 80,
           iconSize: 30,
@@ -55,7 +54,6 @@ class _HomePageState extends State<HomePage> {
           activeColor: const Color.fromRGBO(80, 67, 217, 1),
           inactiveColor: Colors.black12,
           onTap: (index) => setState(() => _bottomNavIndex = index),
-          //other params
         ),
       ),
     );

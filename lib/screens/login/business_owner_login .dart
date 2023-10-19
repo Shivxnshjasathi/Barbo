@@ -46,9 +46,6 @@ class _business_owner_loginState extends State<business_owner_login> {
           ),
           consttextfield(TextField(
             controller: _owneremailcontroller,
-            decoration: InputDecoration(
-              border: InputBorder.none,
-            ),
           )),
           const SizedBox(
             height: 20,
