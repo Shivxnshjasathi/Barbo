@@ -1,6 +1,7 @@
 import 'package:barbo/screens/dasboard_owner/dashboard_owner.dart';
 import 'package:barbo/screens/dashboard/widgets_dashboard.dart';
 import 'package:barbo/screens/notificaion/notification.dart';
+import 'package:barbo/screens/salon_details/salon_details.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 
@@ -75,11 +76,20 @@ class _dashborduiState extends State<dashbordui> {
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: [
-                    salontile(
-                        "https://www.giellesse.it/wp-content/uploads/2019/05/01-Giellesse-Salone-2019-9648-3-1-1200x675.jpg",
-                        "Decadence Hair & Beauty",
-                        "5.0",
-                        "36 store St,London"),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            PageTransition(
+                                type: PageTransitionType.fade,
+                                child: salon_details()));
+                      },
+                      child: salontile(
+                          "https://www.giellesse.it/wp-content/uploads/2019/05/01-Giellesse-Salone-2019-9648-3-1-1200x675.jpg",
+                          "Decadence Hair & Beauty",
+                          "5.0",
+                          "36 store St,London"),
+                    ),
                     const SizedBox(
                       width: 20,
                     ),

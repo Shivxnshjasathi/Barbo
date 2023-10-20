@@ -1,5 +1,7 @@
 import 'package:barbo/conts/text.dart';
+import 'package:barbo/screens/salon_details/salon_details.dart';
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 
 class search_options extends StatefulWidget {
   const search_options({super.key});
@@ -12,11 +14,6 @@ class _search_optionsState extends State<search_options> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        leading: const Icon(Icons.arrow_back),
-        backgroundColor: Colors.white,
-      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(20.0),
@@ -24,11 +21,28 @@ class _search_optionsState extends State<search_options> {
             const SizedBox(
               height: 20,
             ),
-            salon_tile(
-              "https://media.istockphoto.com/id/1320345717/photo/various-cosmetic-accessories-for-makeup-and-manicure-on-trendy-pastel-pink-background-with.jpg?s=612x612&w=0&k=20&c=H35tfZdnHIBJLjXiX2Jfzoq32U8DrZEhZ__5l_05LsM=",
-              "Dame Hair Salon",
-              "4.5",
-              "₹ 100",
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                fontstyle("Search", 26, Colors.black),
+              ],
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    PageTransition(
+                        type: PageTransitionType.fade, child: salon_details()));
+              },
+              child: salon_tile(
+                "https://media.istockphoto.com/id/1320345717/photo/various-cosmetic-accessories-for-makeup-and-manicure-on-trendy-pastel-pink-background-with.jpg?s=612x612&w=0&k=20&c=H35tfZdnHIBJLjXiX2Jfzoq32U8DrZEhZ__5l_05LsM=",
+                "Dame Hair Salon",
+                "4.5",
+                "₹ 100",
+              ),
             ),
             const SizedBox(
               height: 10,
