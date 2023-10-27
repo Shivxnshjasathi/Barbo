@@ -2,13 +2,19 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
 from rest_framework.authtoken.models import Token
+from . models import * 
 
-class UserSerializer(serializers.ModelSerializer):
+class SalonSerializer(serializers.ModelSerializer):
     class Meta:
-        model = User
-        fields = ['id', 'username', 'email']
+        model = Salon
+        fields = '__all__'
+        
+class CustomerSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Customer
+        fields = ('user', 'phone_number',)
 
-class CreateUserSerializer(serializers.ModelSerializer):
+class BookingSerializer(serializers.ModelSerializer):
     class Meta:
-        model = User
-        fields = ['username', 'email', 'password']
+        model = Booking
+        fields = ('customer', 'salon', 'booking_date',) 

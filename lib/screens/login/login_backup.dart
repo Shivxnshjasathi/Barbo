@@ -13,20 +13,15 @@ import 'package:http/http.dart' as http;
 import 'dart:async';
 import 'dart:convert' show json;
 
-final GoogleSignIn _googleSignIn = GoogleSignIn(scopes: ['email']);
+const List<String> scopes = <String>[
+  'email',
+];
 
-Future<void> _handleGoogleSignIn() async {
-  try {
-    final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
-    if (googleUser != null) {
-      // Google Sign-In was successful.
-      print('User signed in: ${googleUser.displayName}');
-    }
-  } catch (error) {
-    // Handle sign-in error
-    print('Error signing in with Google: $error');
-  }
-}
+GoogleSignIn _googleSignIn = GoogleSignIn(
+  // Optional clientId
+  // clientId: 'your-client_id.apps.googleusercontent.com',
+  scopes: scopes,
+);
 
 class login_ui_user extends StatefulWidget {
   const login_ui_user({super.key});
@@ -158,11 +153,7 @@ class _login_ui_userState extends State<login_ui_user> {
           const SizedBox(
             height: 30,
           ),
-          InkWell(
-            onTap: _handleGoogleSignIn,
-            child: constbutton(
-                "Sign in With Google", Colors.black12, Colors.black),
-          ),
+          constbutton("Sign in With Google", Colors.black12, Colors.black),
         ]),
       ),
     );
