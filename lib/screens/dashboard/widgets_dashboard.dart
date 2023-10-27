@@ -4,7 +4,6 @@ import '../../conts/text.dart';
 
 Widget salontile(String img, String salonname, String rating, String address) {
   return Container(
-      height: 300,
       width: 220,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
