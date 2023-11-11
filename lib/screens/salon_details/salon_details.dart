@@ -22,9 +22,6 @@ class _salon_detailsState extends State<salon_details> {
         child: Padding(
           padding: const EdgeInsets.all(20.0),
           child: Column(children: [
-            const SizedBox(
-              height: 20,
-            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

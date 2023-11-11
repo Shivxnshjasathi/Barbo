@@ -57,8 +57,84 @@ class _payment_screenState extends State<payment_screen> {
                                     const SizedBox(
                                       height: 10,
                                     ),
-                                    fontstyle(
-                                        "List of Services", 16, Colors.black),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Container(
+                                          height: 30,
+                                          width: 30,
+                                          decoration: const BoxDecoration(
+                                              image: DecorationImage(
+                                                  image: AssetImage(
+                                                      "assets/earning.png"))),
+                                        ),
+                                        const SizedBox(
+                                          width: 20,
+                                        ),
+                                        Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            fontstyle("Sunday 8 Nov.", 20,
+                                                Colors.black),
+                                            fontstyle("8 pm - 9 pm", 14,
+                                                Colors.black),
+                                          ],
+                                        )
+                                      ],
+                                    ),
+                                    const SizedBox(
+                                      height: 10,
+                                    ),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Container(
+                                          height: 30,
+                                          width: 30,
+                                          decoration: const BoxDecoration(
+                                              image: DecorationImage(
+                                                  image: AssetImage(
+                                                      "assets/earning.png"))),
+                                        ),
+                                        const SizedBox(
+                                          width: 20,
+                                        ),
+                                        Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            fontstyle("Team Member name", 20,
+                                                Colors.black),
+                                            fontstyle(
+                                                "Mohan", 14, Colors.black),
+                                          ],
+                                        )
+                                      ],
+                                    ),
+                                    const SizedBox(
+                                      height: 10,
+                                    ),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Container(
+                                          height: 30,
+                                          width: 30,
+                                          decoration: const BoxDecoration(
+                                              image: DecorationImage(
+                                                  image: AssetImage(
+                                                      "assets/earning.png"))),
+                                        ),
+                                        const SizedBox(
+                                          width: 20,
+                                        ),
+                                        fontstyle("Overview", 20, Colors.black),
+                                      ],
+                                    ),
                                     const SizedBox(
                                       height: 20,
                                     ),
@@ -82,12 +158,15 @@ class _payment_screenState extends State<payment_screen> {
                                     const SizedBox(
                                       height: 10,
                                     ),
-                                    fontstyle("Total", 16, Colors.black),
+                                    fontstyle("Total", 16, Colors.black)
                                   ],
                                 ),
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
+                                    SizedBox(
+                                      height: 130,
+                                    ),
                                     fontstyle("", 16, Colors.black),
                                     const SizedBox(
                                       height: 20,
@@ -172,7 +251,7 @@ Widget booking_tile(
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 20,
               ),
               Column(

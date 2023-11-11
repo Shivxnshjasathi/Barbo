@@ -22,9 +22,6 @@ class _select_timingsState extends State<select_timings> {
           children: [
             SingleChildScrollView(
               child: Column(children: [
-                const SizedBox(
-                  height: 20,
-                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [

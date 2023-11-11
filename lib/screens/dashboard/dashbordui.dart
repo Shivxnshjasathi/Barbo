@@ -25,44 +25,6 @@ class _dashborduiState extends State<dashbordui> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              const SizedBox(
-                height: 40,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  fontstyle("Hi, vaibhav", 26, Colors.black),
-                  Row(
-                    children: [
-                      InkWell(
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                PageTransition(
-                                    type: PageTransitionType.fade,
-                                    child: const notification()));
-                          },
-                          child: const Icon(Icons.notifications)),
-                      SizedBox(
-                        width: 20,
-                      ),
-                      IconButton(
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              PageTransition(
-                                  type: PageTransitionType.fade,
-                                  child: const dashboard_owner()));
-                        },
-                        icon: const Icon(Icons.menu),
-                      )
-                    ],
-                  )
-                ],
-              ),
-              const SizedBox(
-                height: 50,
-              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [

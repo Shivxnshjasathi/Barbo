@@ -25,9 +25,6 @@ class _add_scalonState extends State<add_scalon> {
           children: [
             SingleChildScrollView(
               child: Column(children: [
-                const SizedBox(
-                  height: 20,
-                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [

@@ -55,21 +55,33 @@ class _dashboard_ownerState extends State<dashboard_owner> {
             const SizedBox(
               height: 20,
             ),
-            stats_tile("Earning/Monthly", "₹ 400"),
+            stats_tile("Earning is month", "₹ 400", "assets/earning.png"),
             const SizedBox(
               height: 10,
             ),
-            stats_tile("Appointments/Monthly", "4"),
+            stats_tile(
+                "Appointments in this month", "4", "assets/appointment.png"),
             const SizedBox(
               height: 10,
             ),
-            stats_tile("Reviews", "4.5"),
-            SizedBox(
+            stats_tile("Ratings", "4.5", "assets/star.png"),
+            const SizedBox(
               height: 10,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            Column(
               children: [
+                const SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    fontstyle("See your busniess", 26, Colors.black),
+                  ],
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
                 InkWell(
                     onTap: () {
                       Navigator.push(
@@ -78,16 +90,16 @@ class _dashboard_ownerState extends State<dashboard_owner> {
                               type: PageTransitionType.fade,
                               child: const booking_details()));
                     },
-                    child: booking_tile("Upcoming booking")),
-                InkWell(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          PageTransition(
-                              type: PageTransitionType.fade,
-                              child: const booking_details()));
-                    },
-                    child: booking_tile("Cancled booking"))
+                    child: stats_tile("Upcomings Appointments", "4",
+                        "assets/appointment2.png")),
+                const SizedBox(
+                  height: 10,
+                ),
+                stats_tile(
+                    "Canclled Appointments", "4.5", "assets/appointment1.png"),
+                const SizedBox(
+                  height: 10,
+                ),
               ],
             )
           ]),
@@ -97,30 +109,32 @@ class _dashboard_ownerState extends State<dashboard_owner> {
   }
 }
 
-Widget stats_tile(String text2, String text3) {
+Widget stats_tile(String text2, String text3, String img) {
   return Container(
       width: 400,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10), color: Colors.black12),
       child: Padding(
-          padding: const EdgeInsets.all(10),
+          padding: const EdgeInsets.all(15),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              fontstyle(text2, 16, Colors.black),
-              const SizedBox(
-                height: 10,
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      fontstyle(text3, 20, Colors.black),
-                    ],
-                  )
+                  fontstyle(text3, 20, Colors.black),
+                  Container(
+                    height: 30,
+                    width: 30,
+                    decoration: BoxDecoration(
+                        image: DecorationImage(image: AssetImage(img))),
+                  ),
                 ],
-              )
+              ),
+              const SizedBox(
+                height: 8,
+              ),
+              fontstyle(text2, 16, Colors.black),
             ],
           )));
 }

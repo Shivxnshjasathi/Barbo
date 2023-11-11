@@ -25,9 +25,6 @@ class _search_screenState extends State<search_screen> {
         child: Padding(
           padding: const EdgeInsets.all(20.0),
           child: Column(children: [
-            const SizedBox(
-              height: 20,
-            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
@@ -45,21 +42,6 @@ class _search_screenState extends State<search_screen> {
             ),
             const SizedBox(
               height: 10,
-            ),
-            consttextfield(TextField(
-              controller: _search,
-              decoration: const InputDecoration(
-                border: InputBorder.none,
-              ),
-            )),
-            const SizedBox(
-              height: 20,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                fontstyle("Location", 18, Colors.grey),
-              ],
             ),
             consttextfield(TextField(
               controller: _search,

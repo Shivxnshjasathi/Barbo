@@ -23,9 +23,6 @@ class _add_amountState extends State<add_amount> {
           children: [
             SingleChildScrollView(
               child: Column(children: [
-                const SizedBox(
-                  height: 20,
-                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [

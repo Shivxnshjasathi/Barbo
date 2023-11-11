@@ -1,11 +1,15 @@
 import 'dart:io';
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
+import 'package:barbo/conts/text.dart';
+import 'package:barbo/screens/dasboard_owner/dashboard_owner.dart';
 import 'package:barbo/screens/dashboard/dashbordui.dart';
+import 'package:barbo/screens/notificaion/notification.dart';
 import 'package:barbo/screens/profile/profile.dart';
 import 'package:barbo/screens/search/search.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -30,6 +34,54 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+          elevation: 0,
+          automaticallyImplyLeading: false,
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Container(
+                    height: 100,
+                    width: 100,
+                    decoration: const BoxDecoration(
+                        image: DecorationImage(
+                            image: AssetImage("assets/logo.png"))),
+                  ),
+                ],
+              ),
+              Row(
+                children: [
+                  InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            PageTransition(
+                                type: PageTransitionType.fade,
+                                child: const notification()));
+                      },
+                      child: const Icon(Icons.notifications)),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  IconButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          PageTransition(
+                              type: PageTransitionType.fade,
+                              child: const dashboard_owner()));
+                    },
+                    icon: const Icon(Icons.menu),
+                  )
+                ],
+              )
+            ],
+          ),
+        ),
         body: IndexedStack(
           index: _bottomNavIndex,
           children: pages,

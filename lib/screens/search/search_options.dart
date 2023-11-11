@@ -18,9 +18,6 @@ class _search_optionsState extends State<search_options> {
         child: Padding(
           padding: const EdgeInsets.all(20.0),
           child: Column(children: [
-            const SizedBox(
-              height: 20,
-            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
